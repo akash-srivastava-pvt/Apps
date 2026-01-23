@@ -1,66 +1,31 @@
-name: Publish Release EXE to GitHub Pages
+name: Deploy EXE for Microsoft Store (Direct Link)
 
 on:
   workflow_dispatch:
-
-permissions:
-  contents: write
+  release:
+    types: [published]
 
 jobs:
-  publish:
+  deploy-static-exe:
     runs-on: ubuntu-latest
-
     steps:
-      # ------------------------------------------------------------
-      # 1️⃣ Checkout repo
-      # ------------------------------------------------------------
-      - name: Checkout repository
+      - name: Checkout gh-pages branch
         uses: actions/checkout@v4
+        with:
+          ref: gh-pages
 
-      # ------------------------------------------------------------
-      # 2️⃣ Download EXE from GitHub Release (REAL FILE, NOT LFS)
-      # ------------------------------------------------------------
-      - name: Download release asset
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Versioned Directory
+        run: mkdir -p downloads/1.0.0
+
+      - name: Download Asset from Release
         run: |
-          mkdir -p release
-          gh release download v1.0.0 \
-            --repo akash-srivastava-pvt/Apps \
-            --pattern "GemSuite.Setup.1.0.0.exe" \
-            --dir release
+          # Downloading the file locally first
+          curl -L -o downloads/1.0.0/GemSuite.Setup.1.0.0.exe https://github.com/akash-srivastava-pvt/Apps/releases/download/v1.0.0/GemSuite.Setup.1.0.0.exe
 
-          ls -lh release
-
-      # ------------------------------------------------------------
-      # 3️⃣ Configure git
-      # ------------------------------------------------------------
-      - name: Configure git
+      - name: Commit and Push to gh-pages
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      # ------------------------------------------------------------
-      # 4️⃣ Publish to gh-pages (NO LFS, DIRECT FILE)
-      # ------------------------------------------------------------
-      - name: Publish to GitHub Pages
-        run: |
-          git checkout --orphan gh-pages
-          git rm -rf .
-
-          mkdir -p GemSuite/1.0.0
-          cp release/GemSuite.Setup.1.0.0.exe GemSuite/1.0.0/
-
-          git add GemSuite
-          git commit -m "Publish GemSuite v1.0.0"
-          git push -f origin gh-pages
-
-      # ------------------------------------------------------------
-      # 5️⃣ Output direct download URL
-      # ------------------------------------------------------------
-      - name: Output direct URL
-        run: |
-          echo "--------------------------------------------------"
-          echo "DIRECT DOWNLOAD URL (NO REDIRECT, NO LFS):"
-          echo "https://akash-srivastava-pvt.github.io/Apps/GemSuite/1.0.0/GemSuite.Setup.1.0.0.exe"
-          echo "--------------------------------------------------"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add downloads/1.0.0/GemSuite.Setup.1.0.0.exe
+          git commit -m "Add versioned exe for MS Store submission"
+          git push origin gh-pages
