@@ -1,0 +1,66 @@
+name: Publish Release EXE to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------
+      # 1️⃣ Checkout repo
+      # ------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------------------------
+      # 2️⃣ Download EXE from GitHub Release (REAL FILE, NOT LFS)
+      # ------------------------------------------------------------
+      - name: Download release asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p release
+          gh release download v1.0.0 \
+            --repo akash-srivastava-pvt/Apps \
+            --pattern "GemSuite.Setup.1.0.0.exe" \
+            --dir release
+
+          ls -lh release
+
+      # ------------------------------------------------------------
+      # 3️⃣ Configure git
+      # ------------------------------------------------------------
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # ------------------------------------------------------------
+      # 4️⃣ Publish to gh-pages (NO LFS, DIRECT FILE)
+      # ------------------------------------------------------------
+      - name: Publish to GitHub Pages
+        run: |
+          git checkout --orphan gh-pages
+          git rm -rf .
+
+          mkdir -p GemSuite/1.0.0
+          cp release/GemSuite.Setup.1.0.0.exe GemSuite/1.0.0/
+
+          git add GemSuite
+          git commit -m "Publish GemSuite v1.0.0"
+          git push -f origin gh-pages
+
+      # ------------------------------------------------------------
+      # 5️⃣ Output direct download URL
+      # ------------------------------------------------------------
+      - name: Output direct URL
+        run: |
+          echo "--------------------------------------------------"
+          echo "DIRECT DOWNLOAD URL (NO REDIRECT, NO LFS):"
+          echo "https://akash-srivastava-pvt.github.io/Apps/GemSuite/1.0.0/GemSuite.Setup.1.0.0.exe"
+          echo "--------------------------------------------------"
