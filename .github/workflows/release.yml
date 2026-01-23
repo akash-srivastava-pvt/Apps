@@ -1,31 +1,30 @@
-name: Deploy EXE for Microsoft Store (Direct Link)
+name: Deploy EXE for Microsoft Store
 
 on:
   workflow_dispatch:
-  release:
-    types: [published]
 
 jobs:
-  deploy-static-exe:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout gh-pages branch
+      - name: Checkout Main Branch
         uses: actions/checkout@v4
         with:
-          ref: gh-pages
+          ref: main # Checkout your code first
 
-      - name: Create Versioned Directory
-        run: mkdir -p downloads/1.0.0
-
-      - name: Download Asset from Release
+      - name: Download and Organize EXE
         run: |
-          # Downloading the file locally first
+          # Create the folder structure
+          mkdir -p downloads/1.0.0
+          
+          # Download the file
           curl -L -o downloads/1.0.0/GemSuite.Setup.1.0.0.exe https://github.com/akash-srivastava-pvt/Apps/releases/download/v1.0.0/GemSuite.Setup.1.0.0.exe
 
-      - name: Commit and Push to gh-pages
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add downloads/1.0.0/GemSuite.Setup.1.0.0.exe
-          git commit -m "Add versioned exe for MS Store submission"
-          git push origin gh-pages
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./downloads
+          destination_dir: downloads
+          keep_files: true # Important: keeps previous versions if you add more later
