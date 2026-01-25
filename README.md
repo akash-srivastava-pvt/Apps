@@ -52,7 +52,7 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 ### Gem Suite
 - Source Code Repository: [Gem Suite](https://github.com/akash-srivastava-pvt/Gem-Suite)
 - Technical Repository: [Technocal Notes]()
-- Getting Start Guide: [Guide]()
+- Getting Start Guide: [Guide](https://docs.google.com/document/d/1F8L1ZRTN_jrv3CWWZOaY_VNWYNoq1QIR2nmvFYQEF7M/edit?usp=sharing)
 
 ---
 
