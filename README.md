@@ -44,10 +44,10 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 
 ### Gem Suite Relaese
 
-Note: App is being applied to microsoft app store and is currenrly in revu=iew stage. The Msft store link will be available here ince all processes are completed.
-[Download]()
+- Note: App is being applied to microsoft app store and is currenrly in revu=iew stage. The Msft store link will be available here ince all processes are completed.
+- [Download]()
 
-| Release | Note | Download EXE |
+| Release | Note | 
 |--------:|------|--------------|
 | v1.0.1-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.1) |
 | v1.0.0-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.0) |
