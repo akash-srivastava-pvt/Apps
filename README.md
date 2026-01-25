@@ -46,7 +46,7 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 
 | Release | Note | Download EXE |
 |--------:|------|--------------|
-| v1.0.1-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.1) | [Download](https://github.com/akash-srivastava-pvt/Apps/blob/release/v1.0.0/GemSuite/1.0.1/GemSuite%20Setup%201.0.1.exe) |
+| v1.0.1-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.1) | [Download](https://github.com/akash-srivastava-pvt/Apps/blob/release/v1.0.0/GemSuite/1.0.1/GemSuite%20Setup%201.0.0.exe) |
 | v1.0.0-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.0) | [Download](https://github.com/akash-srivastava-pvt/Apps/blob/release/v1.0.0/GemSuite/1.0.0/GemSuite%20Setup%201.0.0.exe) |
 
 ### Gem Suite
