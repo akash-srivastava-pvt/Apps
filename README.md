@@ -44,6 +44,8 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 
 ### Gem Suite Relaese
 
+Note: App is being applied to microsoft app store and is currenrly in revu=iew stage. The Msft store link will be available here ince all processes are completed.
+
 | Release | Note | Download EXE |
 |--------:|------|--------------|
 | v1.0.1-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.1) | [Download](https://github.com/akash-srivastava-pvt/Apps/blob/release/v1.0.0/GemSuite/1.0.1/GemSuite%20Setup%201.0.0.exe) |
