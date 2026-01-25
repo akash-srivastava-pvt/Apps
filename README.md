@@ -48,7 +48,7 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 - [Download]()
 
 | Release | Note | 
-|--------:|------|--------------|
+|--------:|------|
 | v1.0.1-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.1) |
 | v1.0.0-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.0) |
 
