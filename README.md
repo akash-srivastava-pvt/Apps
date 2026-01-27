@@ -49,8 +49,7 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 
 | Release | Note | 
 |--------:|------|
-| v1.0.1-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.1) |
-| v1.0.0-beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.0) |
+| Beta | [Note](https://github.com/akash-srivastava-pvt/Apps/releases/tag/v1.0.5) |
 
 ### Gem Suite
 - Source Code Repository: [Gem Suite](https://github.com/akash-srivastava-pvt/Gem-Suite)
