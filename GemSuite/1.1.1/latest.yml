@@ -1,0 +1,9 @@
+version: 1.1.1
+files:
+  - url: Gem-Suite-Setup-1.1.1.exe
+    sha512: bFlf6q5E96UDpSGBNaYuLl6NlHj9mLr9ov+zbn719iJyQ8TjU0hweu5ubJWuy3jDJuyhc/tNkV/+rRSy00oFbw==
+    size: 104769556
+    isAdminRightsRequired: true
+path: Gem-Suite-Setup-1.1.1.exe
+sha512: bFlf6q5E96UDpSGBNaYuLl6NlHj9mLr9ov+zbn719iJyQ8TjU0hweu5ubJWuy3jDJuyhc/tNkV/+rRSy00oFbw==
+releaseDate: '2026-02-02T05:51:56.712Z'
