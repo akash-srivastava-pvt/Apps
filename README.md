@@ -44,7 +44,6 @@ An assistant that converts raw experience into clean, professional, recruiter-re
 
 ### Gem Suite Relaese
 - [<img width="25" height="25" alt="image" src="https://github.com/user-attachments/assets/737b84df-e3d9-485a-90e8-a2faaf23414c" /> Download from Microsoft App Store](https://apps.microsoft.com/store/detail/XP9KJG4RS8R1X2)
-- [Direct Download](https://akash-srivastava-pvt.github.io/Apps/GemSuite/1.0.5/Gem%20Suite%20Setup%201.0.5.exe)
 
 | Release | Note | 
 |--------:|------|
